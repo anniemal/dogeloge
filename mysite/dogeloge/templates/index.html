@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<body>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>Dogwalker</th>
+            <th>Company </th>
+            <th>Contact</th>
+	    <th>Instagram</th
+
+        </tr>
+    </thead>
+        <tbody>
+            {% for dogwalker in dogwalkers %}
+            <tr>
+
+                <td>{{dogwalker.first_name}} {{dogwalker.last_name}}</td>
+                <td>{{dogwalker.company_name}}</td>
+                <td>{{dogwalker.phone_number}} {{dogwalker.email}}</td>
+                {% if dogwalker.instagram %}
+                <td><a href="http://web.stagram.com/n/{{ dogwalker.instagram }}/" target="blank">{{ dogwalker.instagram }}</a></td>
+                {% endif %}
+
+            </tr>
+
+            {% endfor %}
+
+	</tbody>
+</table>
+
+</body>    
+
